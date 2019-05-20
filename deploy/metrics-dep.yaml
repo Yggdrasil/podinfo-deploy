@@ -34,3 +34,6 @@ spec:
           requests:
             memory: "32Mi"
             cpu: "10m"
+          limits:
+            memory: "32Mi"
+            cpu: "10m"
