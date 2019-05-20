@@ -1,0 +1,1 @@
+{"jobID":"e68a5bbd-cdd6-05e4-2a86-218502465432","spec":{"type":"policy","cause":{"Message":"","User":"Martijn Heemels \u003cmartijn@insiders.nl\u003e"},"spec":{"dev:deployment/podinfo":{"add":null,"remove":{"automated":"true"}}}},"result":null}
