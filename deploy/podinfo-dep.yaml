@@ -9,7 +9,7 @@ metadata:
     flux.weave.works/automated_msg: test
     flux.weave.works/automated_user: Martijn Heemels <martijn@insiders.nl>
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: podinfo
@@ -46,4 +46,6 @@ spec:
           requests:
             memory: "32Mi"
             cpu: "10m"
-
+          limits:
+            memory: "32Mi"
+            cpu: "10m"
