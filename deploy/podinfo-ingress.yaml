@@ -3,8 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
-  creationTimestamp: null
-  name: traefik
+  name: podinfo-ingress
   namespace: dev
 spec:
   rules:
@@ -14,5 +13,3 @@ spec:
           serviceName: podinfo
           servicePort: 9898
         path: /podinfo
-status:
-  loadBalancer: {}
