@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
-  name: podinfo-ingress
+  name: whoami-ingress
   namespace: dev
 spec:
   rules:
   - http:
       paths:
-      - path: /podinfo
+      - path: /whoami
         backend:
-          serviceName: podinfo
-          servicePort: 9898
+          serviceName: whoami
+          servicePort: 80
