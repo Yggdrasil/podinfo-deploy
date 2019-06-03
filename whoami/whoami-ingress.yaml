@@ -13,3 +13,7 @@ spec:
         backend:
           serviceName: whoami
           servicePort: 80
+status:
+  loadBalancer:
+    ingress:
+    - publishedService: dev/whoami

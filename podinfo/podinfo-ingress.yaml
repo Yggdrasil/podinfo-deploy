@@ -13,3 +13,7 @@ spec:
         backend:
           serviceName: podinfo
           servicePort: 9898
+status:
+  loadBalancer:
+    ingress:
+    - publishedService: dev/podinfo
