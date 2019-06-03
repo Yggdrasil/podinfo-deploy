@@ -16,4 +16,4 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - publishedService: dev/whoami
+    - hostname: placeholder
