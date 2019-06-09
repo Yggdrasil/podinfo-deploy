@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
-    external-dns.alpha.kubernetes.io/hostname: 'whoami.heemels.net'
   name: whoami-ingress
   namespace: dev
 spec:
@@ -11,7 +10,6 @@ spec:
   - host: 'whoami.heemels.net'
     http:
       paths:
-      - path: /whoami
-        backend:
+      - backend:
           serviceName: whoami
           servicePort: 80
