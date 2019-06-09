@@ -8,7 +8,8 @@ metadata:
   namespace: dev
 spec:
   rules:
-  - http:
+  - host: 'whoami.heemels.net'
+    http:
       paths:
       - path: /whoami
         backend:

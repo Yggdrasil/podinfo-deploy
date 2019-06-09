@@ -9,7 +9,8 @@ metadata:
   namespace: dev
 spec:
   rules:
-  - http:
+  - host: 'podinfo.heemels.net'
+    http:
       paths:
       - path: /podinfo
         backend:
