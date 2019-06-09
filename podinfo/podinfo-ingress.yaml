@@ -4,6 +4,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.frontend.rule.type: PathPrefixStrip
+    external-dns.alpha.kubernetes.io/hostname: 'podinfo.heemels.net'
   name: podinfo-ingress
   namespace: dev
 spec:

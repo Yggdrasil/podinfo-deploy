@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+    external-dns.alpha.kubernetes.io/hostname: 'whoami.heemels.net'
   name: whoami-ingress
   namespace: dev
 spec:
