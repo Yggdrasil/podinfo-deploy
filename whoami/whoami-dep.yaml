@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: whoami
-  namespace: dev
+  namespace: default
   labels:
     app: whoami
 spec:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: whoami
-        image: containous/whoami:v1.0.1
+        image: containous/whoami:v1.4.0
         ports:
         - containerPort: 80
         readinessProbe:
@@ -33,9 +33,9 @@ spec:
           httpGet:
             path: /
             port: 80
-          initialDelaySeconds: 1
+          initialDelaySeconds: 10
           periodSeconds: 10
-          failureThreshold: 2
+          failureThreshold: 10
         resources:
           requests:
             memory: "16Mi"

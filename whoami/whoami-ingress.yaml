@@ -4,12 +4,12 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
   name: whoami-ingress
-  namespace: dev
+  namespace: default
 spec:
   rules:
-  - host: 'whoami.heemels.net'
-    http:
+  - http:
       paths:
       - backend:
           serviceName: whoami
           servicePort: 80
+        path: /whoami
