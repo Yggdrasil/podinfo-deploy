@@ -1,10 +1,10 @@
----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: podinfo
-  namespace: dev
-  annotations: {}
+  namespace: default
+  labels:
+    app: podinfo
 spec:
   replicas: 1
   selector:

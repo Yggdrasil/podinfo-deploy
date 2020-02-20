@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/ssl-temporary-redirect: "true"
   name: whoami-ingress
   namespace: default
 spec:
@@ -11,5 +12,5 @@ spec:
       paths:
       - backend:
           serviceName: whoami
-          servicePort: 80
+          servicePort: http
         path: /whoami

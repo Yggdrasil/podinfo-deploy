@@ -3,13 +3,14 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/ssl-temporary-redirect: "true"
   name: podinfo-ingress
-  namespace: dev
+  namespace: default
 spec:
   rules:
-  - host: 'podinfo.heemels.net'
-    http:
+  - http:
       paths:
       - backend:
           serviceName: podinfo
-          servicePort: 9898
+          servicePort: http
+        path: /podinfo
