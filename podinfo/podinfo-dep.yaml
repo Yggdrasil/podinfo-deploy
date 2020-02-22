@@ -5,8 +5,10 @@ metadata:
   namespace: default
   labels:
     app: podinfo
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: podinfo
@@ -18,8 +20,8 @@ spec:
         prometheus.io/scrape: 'true'
     spec:
       containers:
-      - name: podinfod
-        image: quay.io/stefanprodan/podinfo:1.5.0
+      - name: podinfo
+        image: quay.io/stefanprodan/podinfo:3.2.0
         command:
         - ./podinfo
         - --port=9898
@@ -46,3 +48,22 @@ spec:
           limits:
             memory: "32Mi"
             cpu: "10m"
+      - name: nginx
+        image: nginx:1.17-alpine
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "10m"
+          limits:
+            memory: "32Mi"
+            cpu: "10m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name: nginx-config
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: confnginx

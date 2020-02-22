@@ -4,6 +4,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     ingress.kubernetes.io/ssl-temporary-redirect: "true"
+    traefik.frontend.rule.type: PathPrefixStrip
   name: podinfo-ingress
   namespace: default
 spec:
@@ -12,5 +13,5 @@ spec:
       paths:
       - backend:
           serviceName: podinfo
-          servicePort: http
+          servicePort: httpnginx
         path: /podinfo

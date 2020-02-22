@@ -8,5 +8,8 @@ spec:
     - port: 9898
       targetPort: 9898
       name: http
+    - port: 80
+      targetPort: 80
+      name: httpnginx
   selector:
     app: podinfo
